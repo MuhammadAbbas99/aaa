@@ -37,7 +37,7 @@ def insert_to_table():
 #endregion
 
 #insert_to_table()
-def insert_to(conn, table, columns:list, values):
+def insert_to(conn, table, columns:list, values:list):
     if not _IDENTIFIER_RE_.match(table):
         raise ValueError(f"Invalid table name")
     cols_sql = ",".join(columns)
@@ -63,9 +63,14 @@ insert_to(conn, "tyontekija", ["name", "address", "email"], ["Superman", "Kotiku
 # Git GUI Client tai suoraan GiHubissa)
 # ja vie main.py tiedosto ja test.db omaan githubisi.
 
-def update_table():
+def update_table():     #lisää parametreina esim, table, name, address tms.
     cursor.execute("UPDATE tyontekija SET address=? WHERE name=?", ("Valimotie 8", "Batman"))
     conn.commit()
 
-update_table()
+def delete_from_table(table, name):     #lisää parametreina esim, table, name, address tms.
+    cursor.execute(f"DELETE FROM {table} WHERE name=?", ({name},))      #mieti aina sql-injektion mahdollinen
+    conn.commit()
+
+
+#update_table()
 conn.close()
