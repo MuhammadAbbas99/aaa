@@ -37,7 +37,7 @@ def insert_to_table():
 #endregion
 
 #insert_to_table()
-def insert_to(conn, table, columns, values) -> None:
+def insert_to(conn, table, columns:list, values):
     if not _IDENTIFIER_RE_.match(table):
         raise ValueError(f"Invalid table name")
     cols_sql = ",".join(columns)
@@ -55,10 +55,17 @@ def insert_to(conn, table, columns, values) -> None:
         # conn.close()
 
 insert_to(conn, "tyontekija", ["name", "address", "email"], ["Superman", "Kotikuja 2", "superman@gmail.com"])
-cursor.close()
+#cursor.close()
 
 
 # Harjoitus
 # Luo haluamallasi tavalla (komentorivi/GitHubDektop tms.
 # Git GUI Client tai suoraan GiHubissa)
 # ja vie main.py tiedosto ja test.db omaan githubisi.
+
+def update_table():
+    cursor.execute("UPDATE tyontekija SET address=? WHERE name=?", ("Valimotie 8", "Batman"))
+    conn.commit()
+
+update_table()
+conn.close()
