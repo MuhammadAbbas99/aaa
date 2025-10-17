@@ -67,10 +67,11 @@ def update_table():     #lisää parametreina esim, table, name, address tms.
     cursor.execute("UPDATE tyontekija SET address=? WHERE name=?", ("Valimotie 8", "Batman"))
     conn.commit()
 
-def delete_from_table(table, name):     #lisää parametreina esim, table, name, address tms.
-    cursor.execute(f"DELETE FROM {table} WHERE name=?", ({name},))      #mieti aina sql-injektion mahdollinen
+def delete_name_from_table(table, name):     #lisää parametreina esim, table, name, address tms.
+    cursor.execute(f"DELETE FROM {table} WHERE name=?", (name,))      #mieti aina sql-injektion mahdollinen
     conn.commit()
 
 
 #update_table()
+delete_name_from_table("tyontekija", "Batman")
 conn.close()
