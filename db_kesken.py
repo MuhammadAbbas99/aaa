@@ -1,4 +1,5 @@
 import sqlite3
+import re
 
 conn = sqlite3.connect("albums.db")
 cursor = conn.cursor()
@@ -14,12 +15,10 @@ conn.commit() # ilman tätä ei tallenna lisäystä ohjelman sulkeutuessa
 def add_album(conn, artist, album, year, genre):
     
     ##LISÄÄ INSERT-LAUSE,JOKA LISÄÄ TIETOKANTAAN ANNETUT TIEDOT OMAKSI RIVIKSEEN
-    add_album(conn, "id" INT,
-	"artist_name"	TEXT,
-	"album_name"	TEXT,
-	"year"	TEXT,
-	"genre"	TEXT,
-	PRIMARY KEY("id"))
+    cols_sql = ",".join(columns)
+    sql= f"""INSERT INTO {album} ({cols_sql}))"""
+    cursor = conn.cursor()
+
 
     conn.commit() # ilman tätä ei tallenna lisäystä ohjelman sulkeutuessa
 
