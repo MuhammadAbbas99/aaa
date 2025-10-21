@@ -17,10 +17,9 @@ def create_table():
     name TEXT NOT NULL)
                 """)
 
-    #commit tulee käyttä INSERT, UPDATE, DELETE
-    #Oletuksena sqlite:ssa auto-commit mode päällä
+    # commit tulee käyttä INSERT, UPDATE, DELETE
+    # Oletuksena sqlite:ssa auto-commit mode päällä
     conn.commit()     #tallentaa muutoksen pysyvästi
-
 
 def insert_to_table():
 #region huono tapa
@@ -57,7 +56,6 @@ def insert_to(conn, table, columns:list, values:list):
 insert_to(conn, "tyontekija", ["name", "address", "email"], ["Superman", "Kotikuja 2", "superman@gmail.com"])
 #cursor.close()
 
-
 # Harjoitus
 # Luo haluamallasi tavalla (komentorivi/GitHubDektop tms.
 # Git GUI Client tai suoraan GiHubissa)
@@ -70,7 +68,6 @@ def update_table():     #lisää parametreina esim, table, name, address tms.
 def delete_name_from_table(table, name):     #lisää parametreina esim, table, name, address tms.
     cursor.execute(f"DELETE FROM {table} WHERE name=?", (name,))      #mieti aina sql-injektion mahdollinen
     conn.commit()
-
 
 #update_table()
 delete_name_from_table("tyontekija", "Batman")
