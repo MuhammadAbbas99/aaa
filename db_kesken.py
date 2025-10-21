@@ -16,7 +16,7 @@ def add_album(conn, artist, album, year, genre):
     
     ##LISÄÄ INSERT-LAUSE,JOKA LISÄÄ TIETOKANTAAN ANNETUT TIEDOT OMAKSI RIVIKSEEN
 
-    cols_sql = ",".join(columns)
+    cols_sql = ",".join(column)
     sql= f"""INSERT INTO {album} ({cols_sql}))"""
     cursor = conn.cursor()
 
