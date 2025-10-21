@@ -1,2 +1,2 @@
-This is SQL-learning repo, where playing with cursor
+The SQL-learning placeholder, where experimenting with the cursor
 and git commit for an SQL database file.
