@@ -1,0 +1,11 @@
+1.
+Luo uusi tiedosto, jossa muodostetaan sqlite-yhteys employees.db -tiedostoon (koodi luo tiedoston jos sitä ei löydy).
+Tutki us-500.csv -tiedostoa, ja luo tiedoston mukaiset kolumnit employee_table -nimiseen tauluun (Luo taulu itse tai koodista)
+- jos koodista, niin  vain jos taulua ei ole olemassa)
+
+Lue CSV:n sisältö pandasilla dataframeen ja tallenna dataframen sisältö  employees.db -tiedostoon,
+employee_table -tauluun niin, että indeksit lisätään mukaan ja data yliajetaan, mikäli sitä löytyy
+
+
+2.
+Luo kodi joka avaa tekstitiedostoon, ja lisää tiedostoon 1.riviksi tekstin HELLO WORLD

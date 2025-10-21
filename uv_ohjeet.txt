@@ -1,0 +1,15 @@
+# installing uv via poweshell
+PS C:\Users\ma053309> winget install --id=astral-sh.uv -e
+>uv init  		#- luo .git kansio ja laustaa uv:n
+>uv add pandas		#- luo .venv kansio ja asentaa paketti
+>uv remove pandas   # - jos haluat poista pandas
+>uv run main.py 	#- käynnistä venvin ja ohjelman (sulkee venvin)
+>
+>
+>
+>
+>
+>
+>
+>
+>
