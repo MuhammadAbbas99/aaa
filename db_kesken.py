@@ -12,10 +12,13 @@ cursor.execute(
 )
 conn.commit() # ilman tätä ei tallenna lisäystä ohjelman sulkeutuessa
 
-def add_album(conn, artist, album, year, genre):
+def add_album(artist, album, year, genre):
     
     ##LISÄÄ INSERT-LAUSE,JOKA LISÄÄ TIETOKANTAAN ANNETUT TIEDOT OMAKSI RIVIKSEEN
-
+    conn.commit() # ilman tätä ei tallenna lisäystä ohjelman sulkeutuessa
+    
+'''
+def add_album(conn, artist, album, year, genre):
     cols_sql = ",".join(column)
     sql= f"""INSERT INTO {album} ({cols_sql}))"""
     cursor = conn.cursor()
@@ -26,9 +29,10 @@ def add_album(conn, artist, album, year, genre):
 	"year"	TEXT,
 	"genre"	TEXT,
 	PRIMARY KEY("id"))
-
     conn.commit() # ilman tätä ei tallenna lisäystä ohjelman sulkeutuessa
 
+'''
+    
 
 def fetch_albums():
     cursor.execute("SELECT * FROM albums")    
@@ -50,11 +54,14 @@ def fetch_albums():
 
 
 def remove(selected_album):
+    print(selected_album)
+    cursor.execute("DELETE FROM albums WHERE id=?", (selected_album[0],))
     #LISÄÄ DELETE-LAUSEKE->POISTETAAN ID:N MUKAAN RIVI (ID:N SAA SELVILLE parameterina tullesta selected_album:ista!)
     conn.commit()
 
 
 def update(selected_album, artist, album, year, genre):
+    cursor.execute("UPDATE albums WHERE id=?", (selected_album[0],))
     #LISÄÄ UPDATE-LAUSE, JOKA PÄIVITÄÄ RIVIN ID:n MUKAAN (ID:N SAA SELVILLE parameterina tullesta selected_album:ista)
     conn.commit()
 

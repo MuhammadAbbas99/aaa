@@ -69,6 +69,7 @@ def delete_name_from_table(table, name):     #lisää parametreina esim, table, 
     cursor.execute(f"DELETE FROM {table} WHERE name=?", (name,))      #mieti aina sql-injektion mahdollinen
     conn.commit()
 
+
 #update_table()
 delete_name_from_table("tyontekija", "Batman")
 conn.close()
