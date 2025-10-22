@@ -6,14 +6,22 @@
 #-------------------------------
 #endregion
  
-#region uv ohjeet
 
+#region uv ohjeet
 # # Terminal:issa asenna mysql.connector -moduuli
 # (jos uv ei ole asennettu:)
 # >winget install --id=astral-sh.uv -e
 
 # >uv init
 # >uv add mysql.connector
+
+
+# download Xampp https://www.apachefriends.org/download.html
+# in xampp folder:
+# open xampp-control.exe
+# Apache -> Start
+# Mysql -> Start
+# http://localhost:8000/phpmyadmin/      # databases will be created here.
 
 
 import mysql.connector
@@ -40,7 +48,7 @@ except:
 #        print("connectiuon suljettu")
 #        conn.close()
 
-
+#endregion
 
 # aja  komennolla:
 # >uv run mysql_connection.py
