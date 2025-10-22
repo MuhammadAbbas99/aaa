@@ -51,9 +51,9 @@ print(cursor.lastrowid)
 db.conn.commit()
 
 
-#     # UPDATE name nettisivu tietokanta
-# sql = "UPDATE employees SET name = %s WHERE name = %s"
-# values =("DREAM THEATRE","ABBA")
+     # UPDATE name nettisivu tietokanta
+sql = "UPDATE employees SET name = %s WHERE name = %s"
+values =("DREAM THEATRE","ABBA")
 
 # #     # UPDATE id nettisivu tietokanta
 # # sql = "UPDATE employees SET id = %s WHERE id = %s"

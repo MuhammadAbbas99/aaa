@@ -3,7 +3,7 @@ import mysql_connection as db       # ajaa mysql_connection.py-moduuliin
 def main():
     #print("Hello from data-mysql!")
     
-    # tulostetaan tietokannat#pass
+    # tulostetaan tietokannat #pass
     cursor = db.conn.cursor()
     cursor.execute("SHOW DATABASES")
 
